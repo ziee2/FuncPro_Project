@@ -13,11 +13,11 @@ class Dokter extends Controller {
   public function tambahDokter()
   {
     if ($this->model("Dokter_model")->tambahDataDokter($_POST) > 0){
-      Flasher::setFlash('berhasil', 'ditambahkan', 'success');
+      Flasher::setFlash('Data Dokter', 'berhasil', 'diubah', 'success');
       header("Location:" . BASEURL . "/Dokter");
       exit;
     } else{
-      Flasher::setFlash('gagal', 'ditambahkan', 'danger');
+      Flasher::setFlash('Data Dokter', 'gagal', 'ditambahkan', 'danger');
       header("Location:" . BASEURL . "/Dokter");
       exit;
     }
@@ -31,11 +31,11 @@ class Dokter extends Controller {
   public function editDokter()
   {
     if ($this->model("Dokter_model")->ubahDataDokter($_POST) > 0){
-      Flasher::setFlash('berhasil', 'diubah', 'success');
+      Flasher::setFlash('Data Dokter', 'berhasil', 'diubah', 'success');
       header("Location:" . BASEURL . "/Dokter");
       exit;
     } else{
-      Flasher::setFlash('gagal', 'diubah', 'danger');
+      Flasher::setFlash('Data Dokter', 'gagal', 'diubah', 'danger');
       header("Location:" . BASEURL . "/Dokter");
       exit;
     }

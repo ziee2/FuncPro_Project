@@ -25,10 +25,22 @@
                     <span>Data Apoteker</span>
                 </a>
             </li>
-            <li>
-                <a href="<?= BASEURL ?>/InsertData">
+            <li  class="active">
+                <a href="<?= BASEURL ?>/InsertDataPasien">
                     <i class="fas fa-table-columns"></i>
-                    <span>Tambah Data</span>
+                    <span>Tambah Data Pasien</span>
+                </a>
+            </li>
+            <li  class="active">
+                <a href="<?= BASEURL ?>/InsertDataDokter">
+                    <i class="fas fa-table-columns"></i>
+                    <span>Tambah Data Dokter</span>
+                </a>
+            </li>
+            <li  class="active">
+                <a href="<?= BASEURL ?>/InsertDataApoteker">
+                    <i class="fas fa-table-columns"></i>
+                    <span>Tambah Data Apoteker</span>
                 </a>
             </li>
             <li class="logout">
