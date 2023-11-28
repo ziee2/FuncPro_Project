@@ -25,10 +25,22 @@
                     <span>Data Apoteker</span>
                 </a>
             </li>
-            <li>
-                <a href="<?= BASEURL ?>/InsertData">
+            <li  class="active">
+                <a href="<?= BASEURL ?>/InsertDataPasien">
                     <i class="fas fa-table-columns"></i>
-                    <span>Tambah Data</span>
+                    <span>Tambah Data Pasien</span>
+                </a>
+            </li>
+            <li  class="active">
+                <a href="<?= BASEURL ?>/InsertDataDokter">
+                    <i class="fas fa-table-columns"></i>
+                    <span>Tambah Data Dokter</span>
+                </a>
+            </li>
+            <li  class="active">
+                <a href="<?= BASEURL ?>/InsertDataApoteker">
+                    <i class="fas fa-table-columns"></i>
+                    <span>Tambah Data Apoteker</span>
                 </a>
             </li>
             <li class="logout">
@@ -81,7 +93,7 @@
                                 <td><?= $Apoteker['nama_Apoteker']; ?></td>
                                 <td><?= $Apoteker['alamat']; ?></td>
                                 <td><?= $Apoteker['telepon']; ?></td>
-                                <td><a href="<?= BASEURL; ?>/Apoteker/editApoteker/<?= $Apoteker['ID_Apoteker']; ?>" class="badge text-bg-success float-right tampilModalUbah" data-bs-toggle="modal" data-bs-target="#formModalApoteker" data-id="<?= $Apoteker['ID_Apoteker']; ?>">Edit</a></td>
+                                <td><a href="<?= BASEURL; ?>/Apoteker/editApoteker/<?= $Apoteker['ID_Apoteker']; ?>" class="badge text-bg-success float-right tampilModalUbahApoteker" data-bs-toggle="modal" data-bs-target="#formModalApoteker" data-id="<?= $Apoteker['ID_Apoteker']; ?>">Edit</a></td>
                             </tr>
                         <?php endforeach ?>
                     </tbody>
@@ -104,8 +116,8 @@
 
                     <!-- Elemen formulir untuk Nama Pasien -->
                     <div class="mb-3">
-                        <label for="nama" class="form-label">Nama Apoteker</label>
-                        <input type="text" class="form-control" id="nama" name="nama" required>
+                        <label for="nama_Apoteker" class="form-label">Nama Apoteker</label>
+                        <input type="text" class="form-control" id="nama_Apoteker" name="nama_Apoteker" required>
                     </div>
 
                     <!-- Elemen formulir untuk TTL -->

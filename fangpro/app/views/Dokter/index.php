@@ -25,10 +25,22 @@
                     <span>Data Apoteker</span>
                 </a>
             </li>
-            <li>
-                <a href="<?= BASEURL ?>/InsertData">
+            <li  class="active">
+                <a href="<?= BASEURL ?>/InsertDataPasien">
                     <i class="fas fa-table-columns"></i>
-                    <span>Tambah Data</span>
+                    <span>Tambah Data Pasien</span>
+                </a>
+            </li>
+            <li  class="active">
+                <a href="<?= BASEURL ?>/InsertDataDokter">
+                    <i class="fas fa-table-columns"></i>
+                    <span>Tambah Data Dokter</span>
+                </a>
+            </li>
+            <li  class="active">
+                <a href="<?= BASEURL ?>/InsertDataApoteker">
+                    <i class="fas fa-table-columns"></i>
+                    <span>Tambah Data Apoteker</span>
                 </a>
             </li>
             <li class="logout">
@@ -71,18 +83,19 @@
                             <th>Nama Dokter</th>
                             <th>Spesialisasi</th>
                             <th>Alamat</th>
-                            <th>Telepon</th>
+                            <th>No. Telepon</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach ( $data["dokter"] as $Dokter) : ?>
                             <tr>
                                 <td><?= $Dokter['ID_Dokter']; ?></td>
-                                <td><?= $Dokter['nama']; ?></td>
+                                <td><?= $Dokter['nama_Dokter']; ?></td>
                                 <td><?= $Dokter['spesialisasi']; ?></td>
                                 <td><?= $Dokter['alamat']; ?></td>
                                 <td><?= $Dokter['telepon']; ?></td>
-                                <td><a href="<?= BASEURL; ?>/Dokter/editDokter/<?= $Dokter['ID_Dokter']; ?>" class="badge text-bg-success float-right tampilModalUbah" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $Dokter['ID_Dokter']; ?>">Edit</a></td>
+                                <td><a href="<?= BASEURL; ?>/Dokter/editDokter/<?= $Dokter['ID_Dokter']; ?>" class="badge text-bg-success float-right tampilModalUbahDokter" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $Dokter['ID_Dokter']; ?>">Edit</a></td>
                             </tr>
                         <?php endforeach ?>
                     </tbody>
@@ -105,16 +118,24 @@
 
                     <!-- Elemen formulir untuk Nama Pasien -->
                     <div class="mb-3">
-                        <label for="nama" class="form-label">Nama Dokter</label>
-                        <input type="text" class="form-control" id="nama" name="nama" required>
+                        <label for="nama_Dokter" class="form-label">Nama Dokter</label>
+                        <input type="text" class="form-control" id="nama_Dokter" name="nama_Dokter" required>
                     </div>
 
                     <!-- Elemen formulir untuk Jenis Kelamin -->
                     <div class="mb-3">
                         <label for="spesialisasi">Spesialisasi</label>
                         <select class="form-select" id="spesialisasi" name="spesialisasi" aria-label="Default select example" required>
-                            <option value="L" selected>Laki-Laki</option>
-                            <option value="P">Perempuan</option>
+                            <option value="Penyakit Dalam" selected>Penyakit Dalam</option>
+                            <option value="Anak">Anak</option>
+                            <option value="Saraf">Saraf</option>
+                            <option value="Kandungan dan Ginekologi">Kandungan dan Ginekologi</option>
+                            <option value="Bedah">Bedah</option>
+                            <option value="Kulit dan Kelamin">Kulit dan Kelamin</option>
+                            <option value="THT">THT</option>
+                            <option value="Mata">Mata</option>
+                            <option value="Psikiater">Psikiater</option>
+                            <option value="Gigi">Gigi</option>
                         </select>
                     </div>
 
@@ -126,24 +147,10 @@
 
                     <!-- Elemen formulir untuk Alamat -->
                     <div class="mb-3">
-                        <label for="telepon" class="form-label">Telepon</label>
+                        <label for="telepon" class="form-label">No. Telepon</label>
                         <input type="text" class="form-control" id="telepon" name="telepon" required>
                     </div>
 
-                    <!-- Elemen formulir untuk Poli -->
-                    <div class="mb-3">
-                        <label for="Poli" class="form-label">Poli</label>
-                        <input type="text" class="form-control" id="Poli" name="Poli" required>
-                    </div>
-
-                    <!-- Elemen formulir untuk Status -->
-                    <div class="mb-3">
-                        <label for="Status">Status Pembayaran</label>
-                        <select class="form-select" id="Status" name="Status" aria-label="Default select example" required>
-                            <option value="Lunas" selected>Lunas</option>
-                            <option value="Belum Lunas">Belum Lunas</option>
-                        </select>
-                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

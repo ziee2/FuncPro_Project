@@ -13,11 +13,11 @@ class Apoteker extends Controller {
   public function tambahApoteker()
   {
     if ($this->model("Apoteker_model")->tambahDataApoteker($_POST) > 0){
-      Flasher::setFlash('berhasil', 'ditambahkan', 'success');
+      Flasher::setFlash('Data Apoteker', 'berhasil', 'ditambahkan', 'success');
       header("Location:" . BASEURL . "/Apoteker");
       exit;
     } else{
-      Flasher::setFlash('gagal', 'ditambahkan', 'danger');
+      Flasher::setFlash('Data Apoteker', 'gagal', 'ditambahkan', 'danger');
       header("Location:" . BASEURL . "/Apoteker");
       exit;
     }
@@ -31,11 +31,11 @@ class Apoteker extends Controller {
   public function editApoteker()
   {
     if ($this->model("Apoteker_model")->ubahDataApoteker($_POST) > 0){
-      Flasher::setFlash('berhasil', 'diubah', 'success');
+      Flasher::setFlash('Data Apoteker', 'berhasil', 'diubah', 'success');
       header("Location:" . BASEURL . "/Apoteker");
       exit;
     } else{
-      Flasher::setFlash('gagal', 'diubah', 'danger');
+      Flasher::setFlash('Data Apoteker', 'gagal', 'diubah', 'danger');
       header("Location:" . BASEURL . "/Apoteker");
       exit;
     }
