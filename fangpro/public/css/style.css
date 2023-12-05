@@ -368,3 +368,7 @@ button {
     list-style-type:none;
     padding: 15px;
 }
+
+.button_sort {
+    color: aliceblue;
+}

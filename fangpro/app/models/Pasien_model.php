@@ -21,6 +21,43 @@ class Pasien_model
     return $this->db->resultSet();
   }
 
+  public function sortingDataPasien($sort = 'nama', $order = 'ASC')
+  {
+    $this->db->query("SELECT * FROM " . $this->table);
+    $result = $this->db->resultSet();
+
+    usort($result, function ($a, $b) use ($sort, $order) {
+        // Penanganan pengurutan untuk tanggal lahir
+        if ($sort === 'Tanggal_Lahir') {
+            $dateA = DateTime::createFromFormat('Y-m-d', $a[$sort]);
+            $dateB = DateTime::createFromFormat('Y-m-d', $b[$sort]);
+
+            if (!$dateA || !$dateB) {
+                // Gagal membuat objek DateTime, kembalikan 0 (tidak ada perubahan urutan)
+                return 0;
+            }
+
+            if ($order === 'ASC') {
+                return $dateA <=> $dateB;
+            } else {
+                return $dateB <=> $dateA;
+            }
+        }
+
+        // Pengurutan standar untuk kolom lain
+        $valueA = $a[$sort];
+        $valueB = $b[$sort];
+
+        if ($order === 'ASC') {
+            return $valueA <=> $valueB;
+        } else {
+            return $valueB <=> $valueA;
+        }
+    });
+    
+    return $result;
+  }
+
   public function tambahDataPasien($data)
   {
     $query = "INSERT INTO pasien

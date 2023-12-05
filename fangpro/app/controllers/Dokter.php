@@ -51,4 +51,25 @@ class Dokter extends Controller {
     $this->view("templates/footer");
 
   }
+
+  public function sortingPasien()
+  {
+    $sortColumns = ['nama_Dokter', 'spesialisasi', 'alamat', 'telepon'];
+    $sort = isset($_POST['sort']) && in_array($_POST['sort'], $sortColumns) ? $_POST['sort'] : 'nama_Dokter';
+    $order = isset($_SESSION['order']) ? $_SESSION['order'] : 'ASC';
+
+    if (isset($_POST['sort']) && $_POST['sort'] === $sort) {
+        $order = $order === 'ASC' ? 'DESC' : 'ASC';
+    } else {
+        $order = 'ASC';
+    }
+    $_SESSION['sort'] = $sort;
+    $_SESSION['order'] = $order;
+
+    $data["judul"] = "Data Dokter";
+    $data["psn"] = $this->model("Dokter_model")->sortingDataDokter($sort, $order);
+    $this->view("templates/header", $data);
+    $this->view("Dokter/index", $data);
+    $this->view("templates/footer");
+  }
 }

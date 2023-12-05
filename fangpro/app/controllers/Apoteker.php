@@ -51,4 +51,26 @@ class Apoteker extends Controller {
     $this->view("templates/footer");
 
   }
+
+  public function sortingApoteker()
+  {
+    $sortColumns = ['nama_Apoteker', 'alamat', 'telepon'];
+
+    $sort = isset($_POST['sort']) && in_array($_POST['sort'], $sortColumns) ? $_POST['sort'] : 'nama_apoteker';
+    $order = isset($_SESSION['order']) ? $_SESSION['order'] : 'ASC';
+
+    if (isset($_POST['sort']) && $_POST['sort'] === $sort) {
+        $order = $order === 'ASC' ? 'DESC' : 'ASC';
+    } else {
+        $order = 'ASC';
+    }
+    $_SESSION['sort'] = $sort;
+    $_SESSION['order'] = $order;
+
+    $data["judul"] = "Data Apoteker";
+    $data["Apoteker"] = $this->model("Apoteker_model")->sortingDataApoteker($sort, $order);
+    $this->view("templates/header", $data);
+    $this->view("Apoteker/index", $data);
+    $this->view("templates/footer");
+  }
 }

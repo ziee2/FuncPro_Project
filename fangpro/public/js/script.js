@@ -5,7 +5,7 @@ $(function() {
       const id = $(this).data('id');
 
       $.ajax({
-        url: 'http://localhost/functional-programming/fangpro/public/Pasien/getUbahPasien',
+        url: 'http://localhost/FuncPro_Project/fangpro/public/Pasien/getUbahPasien',
         data: {id : id},
         method: 'post',
         dataType: 'json',
@@ -26,7 +26,7 @@ $(function() {
     const id = $(this).data('id');
 
     $.ajax({
-      url: 'http://localhost/functional-programming/fangpro/public/Dokter/getUbahDokter',
+      url: 'http://localhost/FuncPro_Project/fangpro/public/Dokter/getUbahDokter',
       data: {id : id},
       method: 'post',
       dataType: 'json',
@@ -45,7 +45,7 @@ $(function() {
     const id = $(this).data('id');
 
     $.ajax({
-      url: 'http://localhost/functional-programming/fangpro/public/Apoteker/getUbahApoteker',
+      url: 'http://localhost/FuncPro_Project/fangpro/public/Apoteker/getUbahApoteker',
       data: {id : id},
       method: 'post',
       dataType: 'json',
