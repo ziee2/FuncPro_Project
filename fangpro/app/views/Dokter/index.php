@@ -80,12 +80,15 @@
                 <table>
                     <thead>
                         <tr>
+                        <form method="post" action="<?= BASEURL ?>/Pasien/sortingPasien">
                             <th>ID</th>
-                            <th>Nama Dokter</th>
-                            <th>Spesialisasi</th>
-                            <th>Alamat</th>
-                            <th>No. Telepon</th>
+                            <th>Nama Dokter <button type="submit" name="sort" value="nama_Dokter"><i class="bi bi-sort-alpha-up"></i></button></th>
+                            <th>Spesialisasi <button type="submit" name="sort" value="spesialisasi"><i class="bi bi-sort-alpha-up"></i></button></th>
+                            <th>Alamat <button type="submit" name="sort" value="alamat"><i class="bi bi-sort-alpha-up"></i></button></th>
+                            <th>No. Telepon <button type="submit" name="sort" value="telepon"><i class="bi bi-sort-alpha-up"></i></button></th>
                             <th>Aksi</th>
+                            <input type="hidden" name="order" value="<?= $order ?>">
+                        </form>
                         </tr>
                     </thead>
                     <tbody>

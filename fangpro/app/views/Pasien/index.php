@@ -79,14 +79,17 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Nama Pasien</th>
-                            <th>Jenis Kelamin</th>
-                            <th>TTL</th>
-                            <th>Alamat</th>
-                            <th>Poli</th>
-                            <th>Status</th>
-                            <th>Aksi</th>
+                            <th>ID</th> 
+                            <form method="post" action="<?= BASEURL ?>/Pasien/sortingPasien">
+                                <th>Nama Pasien <button type="submit" name="sort" value="nama"><i class="bi bi-sort-alpha-up"></i></button></th>
+                                <th>Jenis Kelamin<button type="submit" name="sort" value="jenis_kelamin"> <i class="bi bi-sort-alpha-up"></i></button></th>
+                                <th>Tanggal Lahir<button type="submit" name="sort" value="Tanggal_Lahir"> <i class="bi bi-sort-alpha-up"></i></button></th>
+                                <th>Alamat<button type="submit" name="sort" value="Alamat"><i class="bi bi-sort-alpha-up"></i></button></th>
+                                <th>Poli<button type="submit" name="sort" value="Poli"><i class="bi bi-sort-alpha-up"></i></button></th>
+                                <th>Status<button type="submit" name="sort" value="Status"><i class="bi bi-sort-alpha-up"></i></button></th>
+                                <th>Aksi</th>
+                                <input type="hidden" name="order" value="<?= $order ?>">
+                            </form>
                         </tr>
                     </thead>
                     <tbody>

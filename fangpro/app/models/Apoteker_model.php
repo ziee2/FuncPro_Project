@@ -63,6 +63,27 @@ class Apoteker_model
 
   }
 
+
+  public function sortingDataApoteker($sort = 'nama_Apoteker', $order = 'ASC')
+  {
+    $this->db->query("SELECT * FROM " . $this->table);
+    $result = $this->db->resultSet();
+
+    usort($result, function($a, $b) use ($sort, $order) {
+      $valueA = $a[$sort];
+      $valueB = $b[$sort];
+
+      if ($order === 'ASC') {
+          return $valueA <=> $valueB;
+      } else {
+          return $valueB <=> $valueA;
+      }
+  });
+
+  return $result;
+  }
+
+
   public function searchApoteker($keyword)
   {
     $columns = $this->getColumnsApoteker();
