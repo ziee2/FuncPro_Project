@@ -51,12 +51,13 @@
             </li>
         </ul>
     </div>
-    <div class="row">
-        <div class="col-lg-6">
-            <?php Flasher::flash(); ?>
-        </div>
-    </div>
+    
     <div class="main--content">
+        <div class="row">
+            <div class="col-lg-6">
+                <?php Flasher::flash(); ?>
+            </div>
+        </div>
         <div class="header--wrapper">
             <div class ="header--title">
                 <h2>Data Dokter</h2>
@@ -126,7 +127,8 @@
                     <div class="mb-3">
                         <label for="spesialisasi">Spesialisasi</label>
                         <select class="form-select" id="spesialisasi" name="spesialisasi" aria-label="Default select example" required>
-                            <option value="Penyakit Dalam" selected>Penyakit Dalam</option>
+                            <option value="Umum" selected>Umum</option>
+                            <option value="Penyakit Dalam">Penyakit Dalam</option>
                             <option value="Anak">Anak</option>
                             <option value="Saraf">Saraf</option>
                             <option value="Kandungan dan Ginekologi">Kandungan dan Ginekologi</option>

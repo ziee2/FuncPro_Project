@@ -51,12 +51,13 @@
             </li>
         </ul>
     </div>
-    <div class="row">
-        <div class="col-lg-6">
-            <?php Flasher::flash(); ?>
-        </div>
-    </div>
+    
     <div class="main--content">
+        <div class="row">
+            <div class="col-lg-6">
+                <?php Flasher::flash(); ?>
+            </div>
+        </div>
         <div class="header--wrapper">
             <div class ="header--title">
                 <h2>Data Apoteker</h2>
@@ -116,8 +117,8 @@
 
                     <!-- Elemen formulir untuk Nama Pasien -->
                     <div class="mb-3">
-                        <label for="nama" class="form-label">Nama Apoteker</label>
-                        <input type="text" class="form-control" id="nama" name="nama" required>
+                        <label for="nama_Apoteker" class="form-label">Nama Apoteker</label>
+                        <input type="text" class="form-control" id="nama_Apoteker" name="nama_Apoteker" required>
                     </div>
 
                     <!-- Elemen formulir untuk TTL -->

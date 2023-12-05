@@ -75,7 +75,9 @@
             </div>
 
             <!-- Tombol Submit -->
-            <button type="submit" name="submit">Tambah Data</button>
+            <div class="d-grid gap-2">
+                <button class="btn btn-secondary" type="submit" name="submit">Tambah Data</button>
+            </div>
         </form>
     </div>
 

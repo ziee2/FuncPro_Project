@@ -85,8 +85,20 @@
 
             <!-- Elemen formulir untuk Poli -->
             <div class="mb-3">
-                <label for="Poli" class="form-label">Poli</label>
-                <input type="text" class="form-control" id="Poli" name="Poli" required>
+                <label for="Poli">Poli</label>
+                <select class="form-select" id="Poli" name="Poli" aria-label="Default select example" required>
+                    <option value="Umum" selected>Umum</option>
+                    <option value="Penyakit Dalam">Penyakit Dalam</option>
+                    <option value="Anak">Anak</option>
+                    <option value="Saraf">Saraf</option>
+                    <option value="Kandungan dan Ginekologi">Kandungan dan Ginekologi</option>
+                    <option value="Bedah">Bedah</option>
+                    <option value="Kulit dan Kelamin">Kulit dan Kelamin</option>
+                    <option value="THT">THT</option>
+                    <option value="Mata">Mata</option>
+                    <option value="Psikiater">Psikiater</option>
+                    <option value="Gigi">Gigi</option>
+                </select>
             </div>
 
             <!-- Elemen formulir untuk Status -->
@@ -99,7 +111,9 @@
             </div>
 
             <!-- Tombol Submit -->
-            <button type="submit" name="submit">Tambah Data</button>
+            <div class="d-grid gap-2">
+                <button class="btn btn-secondary" type="submit" name="submit">Tambah Data</button>
+            </div>
         </form>
     </div>
 
