@@ -1,7 +1,7 @@
 <?php
 
 class Login_model{
-  private $table ="users";
+  private $table ="user";
   private $db;
 
 
@@ -12,7 +12,7 @@ class Login_model{
 
   public function login($data)
   {
-    $query = "SELECT * FROM users
+    $query = "SELECT * FROM " . $this->table ."
               WHERE 
               username = :username AND password = :password";
 

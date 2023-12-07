@@ -73,7 +73,7 @@
                                Data Pasien 
                             </span>
                             <span class="amount--value">
-                                10
+                                <?= $data["jumlahPasien"]; ?>
                             </span>
                         </div>
                         <i class="fas fa-people-roof icon dark-red"></i>  
@@ -87,7 +87,7 @@
                                Data Dokter 
                             </span>
                             <span class="amount--value">
-                                10
+                                <?= $data["jumlahDokter"]; ?>
                             </span>
                         </div>
                         <i class="fas fa-people-group icon dark-green"></i>  
@@ -102,7 +102,7 @@
                                Data Apoteker 
                             </span>
                             <span class="amount--value">
-                                10
+                                <?= $data["jumlahApoteker"]; ?>
                             </span>
                         </div>
                         <i class="fas fa-people-line icon dark-blue"></i>  

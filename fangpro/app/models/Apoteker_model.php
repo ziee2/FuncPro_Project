@@ -21,6 +21,14 @@ class Apoteker_model
     return $this->db->resultSet();
   }
 
+  public function countApoteker()
+    {
+      $this->db->query("SELECT COUNT(*) as total FROM ". $this->table);
+      $result = $this->db->single();
+
+      return $result['total'];
+    }
+
   public function tambahDataApoteker($data)
   {
     $query = "INSERT INTO apoteker

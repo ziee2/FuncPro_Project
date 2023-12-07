@@ -66,6 +66,14 @@ class Dokter_model
 
   }
   
+  public function countDokter()
+    {
+      $this->db->query("SELECT COUNT(*) as total FROM ". $this->table);
+      $result = $this->db->single();
+
+      return $result['total'];
+    }
+  
   public function sortingDataDokter($sort = 'nama_Dokter', $order = 'ASC')
   {
     $this->db->query("SELECT * FROM " . $this->table);

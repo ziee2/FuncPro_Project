@@ -1,6 +1,6 @@
 <?php
 
-define("BASEURL","http://localhost/FuncPro_Project/fangpro/public");
+define("BASEURL","http://localhost/functional-programming/fangpro/public");
 
 // DB
 define('DB_HOST', 'localhost');
