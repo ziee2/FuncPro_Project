@@ -65,6 +65,18 @@ class Dokter_model
     return $this->db->rowCount();
 
   }
+
+  public function hapusDataDokter($id)
+  {
+    $query = "DELETE FROM " . $this->table . 
+              " WHERE ID_Dokter = :ID_Dokter";
+    $this->db->query($query);
+    $this->db->bind("ID_Dokter", $id);
+
+    $this->db->execute();
+
+    return $this->db->rowCount();
+  }
   
   public function countDokter()
     {

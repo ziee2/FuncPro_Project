@@ -44,7 +44,7 @@
                 </a>
             </li>
             <li class="logout">
-                <a href="#">
+                <a href="<?= BASEURL ?>">
                     <i class="fas fa-sign-out-alt"></i>
                     <span>Logout</span>
                 </a>
@@ -99,7 +99,7 @@
                                 <td><?= $Dokter['spesialisasi']; ?></td>
                                 <td><?= $Dokter['alamat']; ?></td>
                                 <td><?= $Dokter['telepon']; ?></td>
-                                <td><a href="<?= BASEURL; ?>/Dokter/editDokter/<?= $Dokter['ID_Dokter']; ?>" class="badge text-bg-success float-right tampilModalUbahDokter" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $Dokter['ID_Dokter']; ?>">Edit</a></td>
+                                <td><a href="<?= BASEURL; ?>/Dokter/editDokter/<?= $Dokter['ID_Dokter']; ?>" class="badge text-bg-success float-right tampilModalUbahDokter" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $Dokter['ID_Dokter']; ?>">Edit</a> <a href="<?= BASEURL; ?>/Dokter/hapusDokter/<?= $Dokter['ID_Dokter']; ?>" class="badge text-bg-danger float-center" onclick="return confirm('Apakah anda yakin?')">Hapus</a></td>
                             </tr>
                         <?php endforeach ?>
                     </tbody>

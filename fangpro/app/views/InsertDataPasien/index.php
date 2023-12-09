@@ -44,7 +44,7 @@
                 </a>
             </li>
             <li class="logout">
-                <a href="#">
+                <a href="<?= BASEURL ?>">
                     <i class="fas fa-sign-out-alt"></i>
                     <span>Logout</span>
                 </a>

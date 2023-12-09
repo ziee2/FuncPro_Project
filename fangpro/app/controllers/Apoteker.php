@@ -41,6 +41,19 @@ class Apoteker extends Controller {
     }
   }
 
+  public function hapusApoteker($id)
+  {
+    if ($this->model("Apoteker_model")->hapusDataApoteker($id) > 0){
+      Flasher::setFlash('Data Apoteker', 'berhasil', 'dihapus', 'success');
+      header("Location:" . BASEURL . "/Apoteker");
+      exit;
+    } else{
+      Flasher::setFlash('Data Apoteker', 'gagal', 'dihapus', 'danger');
+      header("Location:" . BASEURL . "/Apoteker");
+      exit;
+    }
+  }
+
   public function searchDataApoteker()
   {
     $keyword = $_POST["search"] ?? '';

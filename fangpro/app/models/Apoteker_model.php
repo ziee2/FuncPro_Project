@@ -31,8 +31,8 @@ class Apoteker_model
 
   public function tambahDataApoteker($data)
   {
-    $query = "INSERT INTO apoteker
-                VALUES
+    $query = "INSERT INTO " . $this->table . 
+                  " VALUES
             ('', :nama_Apoteker, :alamat, :telepon)";
     
     $this->db->query($query);
@@ -54,7 +54,7 @@ class Apoteker_model
 
   public function ubahDataApoteker($data)
   {
-    $query = "UPDATE apoteker SET 
+    $query = "UPDATE " . $this->table . " SET 
               nama_Apoteker = :nama_Apoteker,
               alamat = :alamat,
               telepon = :telepon
@@ -69,6 +69,18 @@ class Apoteker_model
     $this->db->execute();
     return $this->db->rowCount();
 
+  }
+
+  public function hapusDataApoteker($id)
+  {
+    $query = "DELETE FROM " . $this->table . 
+              " WHERE ID_Apoteker = :ID_Apoteker";
+    $this->db->query($query);
+    $this->db->bind("ID_Apoteker", $id);
+
+    $this->db->execute();
+
+    return $this->db->rowCount();
   }
 
 

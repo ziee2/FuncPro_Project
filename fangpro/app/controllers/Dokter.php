@@ -41,6 +41,19 @@ class Dokter extends Controller {
     }
   }
 
+  public function hapusDokter($id)
+  {
+    if ($this->model("Dokter_model")->hapusDataDokter($id) > 0){
+      Flasher::setFlash('Data Dokter', 'berhasil', 'dihapus', 'success');
+      header("Location:" . BASEURL . "/Dokter");
+      exit;
+    } else{
+      Flasher::setFlash('Data Dokter', 'gagal', 'dihapus', 'danger');
+      header("Location:" . BASEURL . "/Dokter");
+      exit;
+    }
+  }
+
   public function searchDataDokter()
   {
     $keyword = $_POST["search"] ?? '';

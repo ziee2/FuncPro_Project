@@ -44,7 +44,7 @@
                 </a>
             </li>
             <li class="logout">
-                <a href="#">
+                <a href="<?= BASEURL ?>">
                     <i class="fas fa-sign-out-alt"></i>
                     <span>Logout</span>
                 </a>
@@ -97,7 +97,7 @@
                                 <td><?= $Apoteker['nama_Apoteker']; ?></td>
                                 <td><?= $Apoteker['alamat']; ?></td>
                                 <td><?= $Apoteker['telepon']; ?></td>
-                                <td><a href="<?= BASEURL; ?>/Apoteker/editApoteker/<?= $Apoteker['ID_Apoteker']; ?>" class="badge text-bg-success float-right tampilModalUbahApoteker" data-bs-toggle="modal" data-bs-target="#formModalApoteker" data-id="<?= $Apoteker['ID_Apoteker']; ?>">Edit</a></td>
+                                <td><a href="<?= BASEURL; ?>/Apoteker/editApoteker/<?= $Apoteker['ID_Apoteker']; ?>" class="badge text-bg-success float-center tampilModalUbahApoteker" data-bs-toggle="modal" data-bs-target="#formModalApoteker" data-id="<?= $Apoteker['ID_Apoteker']; ?>">Edit</a> <a href="<?= BASEURL; ?>/Apoteker/hapusApoteker/<?= $Apoteker['ID_Apoteker']; ?>" class="badge text-bg-danger float-center" onclick="return confirm('Apakah anda yakin?')">Hapus</a></td>
                             </tr>
                         <?php endforeach ?>
                     </tbody>
